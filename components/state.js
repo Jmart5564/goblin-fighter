@@ -3,10 +3,11 @@ const state = {};
 
 // initialize state, also used in test
 export function initialize() {
-    // What is the initial shape of state?
-    // For example:
-    // state.game = null;
-    // state.pastGames = [];
+    
+    state.message = '';
+    state.enemies = [
+        { name: 'OZ', status: 3 },
+    ];
 }
 // call initialize
 initialize();
@@ -14,3 +15,11 @@ initialize();
 export default state;
 
 // export dispatch functions that modify state
+export function setMessage(message) {
+    state.message = message;
+}
+
+export function AddEnemy(enemy) {
+    state.enemies.push(enemy);
+}
+
