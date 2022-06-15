@@ -19,10 +19,33 @@
 <body>
     <header>
         <img src="assets/html_css_js.png">
-        <h1>Web MVC UI</h1>
+        <h1>Goblin Fighter App</h1>
     </header>
 
-    <main></main>
+    <main>
+        <div class="message"></div>
+        <div class="player-info">
+            <div class="enemies-defeated">
+                <p>You have defeated <span id="defeated-number">0</span> enemies!</p>
+            </div>
+            <div class="player">
+                <p>
+                    HP:
+                    <span id="player-hp">10</span>
+                </p>
+                <img id="player-image" src="link.png">
+            </div>
+        </div>
+        <div class="enemy-info">
+            <div>
+                <form>
+                    <input name="enemy-name"/>
+                    <button>Fight New Enemy</button>
+                </form>
+                <div class="enemies"></div>
+            </div>
+        </div>
+    </main>
 
     <footer>&copy;2022 Aspiring Software Developer</footer>
 
