@@ -2,7 +2,7 @@
 export default function createEnemy(root, { handleAttackEnemy, handleBye }) {
 
     return ({ enemies }) => {
-        root.HTML = '';
+        root.innerHTML = '';
 
         for (const enemy of enemies) {
             const enemyEl = Enemy({ enemy, handleAttackEnemy, handleBye });
@@ -27,14 +27,16 @@ export function Enemy({ enemy, handleAttackEnemy, handleBye }) {
 
     const emojiEl = document.createElement('span');
     emojiEl.classList.add('emoji');
-    emojiEl.textContent = emojis[enemy.status];
+    emojiEl.textContent = emojis[0];
+
 
     button.append(nameEl, emojiEl);
 
-    if (enemy.status === 0) {
+    if (enemy.health === 0) {
         const bye = document.createElement('button');
         bye.classList.add('bye');
         bye.textContent = '🗑️';
+        emojiEl.textContent = emojis[1];
         bye.addEventListener('click', (e) => {
             e.stopPropagation();
             handleBye(enemy);

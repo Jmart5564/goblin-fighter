@@ -3,10 +3,10 @@ const state = {};
 
 // initialize state, also used in test
 export function initialize() {
-    
+    state.damage = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2];
     state.message = '';
     state.enemies = [
-        { name: 'OZ', status: 3 },
+        { name: 'OZ', health: 3 },
     ];
 }
 // call initialize
@@ -19,7 +19,12 @@ export function setMessage(message) {
     state.message = message;
 }
 
-export function AddEnemy(enemy) {
+export function addEnemy(enemy) {
     state.enemies.push(enemy);
+}
+
+export function removeEnemy(enemy) {
+    const index = state.enemies.indexOf(enemy);
+    state.enemies.splice(index, 1);
 }
 
