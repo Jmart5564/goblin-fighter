@@ -23,6 +23,9 @@ const Enemies = createEnemy(document.querySelector('#enemies'), {
         if (enemy.health <= 0) {
             return;
         }
+        if (state.hp === 0) {
+            return;
+        }
         if (Math.random() < 0.33) {
             enemy.health--;
             setPlayerMessage('You hit the enemy!');
