@@ -25,16 +25,19 @@ export function Enemy({ enemy, handleAttackEnemy, handleBye }) {
     nameEl.classList.add('name');
     nameEl.textContent = enemy.name;
 
-    const emojiEl = document.createElement('span');
-    emojiEl.classList.add('emoji');
-    emojiEl.textContent = emojis[0];
+    //const emojiEl = document.createElement('span');
+    //emojiEl.classList.add('emoji');
+    //emojiEl.textContent = emojis[0];
+    const imgEl = document.createElement('img');
+    imgEl.classList.add('img');
+    imgEl.src = './poe.png';
 
     const healthEl = document.createElement('span');
     healthEl.classList.add('health');
     healthEl.textContent = enemy.health;
 
 
-    button.append(nameEl, emojiEl, healthEl);
+    button.append(nameEl, imgEl, healthEl);
 
     if (enemy.health === 0) {
         const bye = document.createElement('button');
