@@ -4,7 +4,7 @@ const state = {};
 // initialize state, also used in test
 export function initialize() {
     state.defeated = 0;
-    state.hp = 10;
+    state.hp = 10;  
     state.damage = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2];
     state.message = '';
     state.enemies = [

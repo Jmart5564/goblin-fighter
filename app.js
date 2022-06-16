@@ -16,8 +16,31 @@ const Message = createMessage(document.querySelector('#message'));
 // - pass any needed handler functions as properties of an actions object
 const Enemies = createEnemy(document.querySelector('#enemies'), {
     handleAttackEnemy: (enemy) => {
-
-    }
+        if (enemy.health <= 0) return;
+        if (Math.random() < 0.5) {
+            enemy.health--;
+            setMessage('You hit the enemy!');
+        } else {
+            setMessage('You missed!');
+        }
+        if (Math.random() >= 0.5) {
+            state.hp--;
+            setMessage('Enemy hit you!');
+        } else {
+            setMessage('Enemy missed!');
+        }
+        if (enemy.health === 0) {
+            state.defeated++;
+        }
+        if (state.hp === 0) {
+            setMessage('GAME OVER');
+        }
+        display();
+    },
+    handleBye: (enemy) => {
+        removeEnemy(enemy);
+        display();
+    },
 });
 
 
@@ -34,6 +57,7 @@ const AddEnemy = createAddEnemy(document.querySelector('#add-enemy'), {
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
+    Message({ message: state.message });
     AddEnemy({ enemy: state.enemy });
     Enemies({ enemies: state.enemies });
     // Call each component passing in props that are the pieces of state this component needs
