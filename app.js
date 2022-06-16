@@ -10,8 +10,8 @@ import createMessage from './components/Message.js';
 // import state and dispatch functions
 const playerMessage = createMessage(document.querySelector('#player-message'));
 const enemyMessage = createMessage(document.querySelector('#enemy-message'));
-const playerHP = document.querySelector('#player-hp');
-const defeatedEnemies = document.querySelector('#defeated-number');
+let playerHP = document.querySelector('#player-hp');
+let defeatedEnemies = document.querySelector('#defeated-number');
 
 
 
@@ -21,7 +21,6 @@ const defeatedEnemies = document.querySelector('#defeated-number');
 const Enemies = createEnemy(document.querySelector('#enemies'), {
     handleAttackEnemy: (enemy) => {
         if (enemy.health <= 0) {
-            state.defeated++;
             return;
         }
         if (Math.random() < 0.33) {
@@ -38,6 +37,9 @@ const Enemies = createEnemy(document.querySelector('#enemies'), {
         }
         if (state.hp === 0) {
             setPlayerMessage('GAME OVER');
+        }
+        if (enemy.health === 0) {
+            state.defeated++;
         }
         display();
     },
@@ -65,6 +67,9 @@ function display() {
     enemyMessage({ message: state.enemyMessage });
     AddEnemy({ enemy: state.enemy });
     Enemies({ enemies: state.enemies });
+    playerHP.textContent = state.hp; 
+    defeatedEnemies.textContent = state.defeated;
+    //defeatedEnemies ({ defeated: state.defeated });
     // Call each component passing in props that are the pieces of state this component needs
 }
 
