@@ -6,7 +6,8 @@ export function initialize() {
     state.defeated = 0;
     state.hp = 10;  
     state.damage = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2];
-    state.message = '';
+    state.enemyMessage = '';
+    state.playerMessage = '';
     state.enemies = [
         { name: 'OZ', health: 3 },
     ];
@@ -17,9 +18,16 @@ initialize();
 export default state;
 
 // export dispatch functions that modify state
-export function setMessage(message) {
-    state.message = message;
+
+
+export function setPlayerMessage(message) {
+    state.playerMessage = message;
 }
+
+export function setEnemyMessage(message) {
+    state.enemyMessage = message;
+}
+
 
 export function addEnemy(enemy) {
     state.enemies.push(enemy);
