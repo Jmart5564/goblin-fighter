@@ -3,6 +3,18 @@ main {
     grid-template-columns: 350px, 1fr;
     grid-template-areas: 
     'player-info enemy-info';
+    color: white;
+}
+
+header {
+    background-color: transparent;
+}
+
+h1 {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-items: center;
 }
 
 .player-info {
@@ -18,20 +30,35 @@ main {
 
 #enemy-message {
     background: black;
-    justify-self: center;
+    justify-self: flex-start;
     align-self: center;
     padding: 3px;
 }
 
 #player-message {
     background: black;
-    justify-self: flex-start;
+    justify-self: center;
     align-self: center;
     padding: 3px;
 }
 
+button {
+    background-color: #553c0691;
+    border-radius: 10px;
+}
+
+#add-enemy-button {
+    background-color: rgb(7, 7, 7);
+    border-radius: 10px;
+    color: white;
+}
+
+#add-enemy-button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 button:hover {
-    background-color: black;
+    background-color: rgb(85, 64, 20);
 }
 
 .player-hp-container {
@@ -47,3 +74,10 @@ button:hover {
 #add-enemy {
     padding-bottom: 10px;
 }
+
+button, .enemy {
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
