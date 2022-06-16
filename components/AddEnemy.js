@@ -1,4 +1,4 @@
-//add handleAddEnemy next to root?
+
 export default function createAddEnemy(root, { handleAddEnemy }) {
     const form = root.querySelector('form');
 
@@ -6,6 +6,7 @@ export default function createAddEnemy(root, { handleAddEnemy }) {
         e.preventDefault();
         const formData = new FormData(form);
         handleAddEnemy(formData.get('name'));
+        form.reset();
     });
 
     return () => {};

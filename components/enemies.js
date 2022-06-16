@@ -29,8 +29,12 @@ export function Enemy({ enemy, handleAttackEnemy, handleBye }) {
     emojiEl.classList.add('emoji');
     emojiEl.textContent = emojis[0];
 
+    const healthEl = document.createElement('span');
+    healthEl.classList.add('health');
+    healthEl.textContent = enemy.health;
 
-    button.append(nameEl, emojiEl);
+
+    button.append(nameEl, emojiEl, healthEl);
 
     if (enemy.health === 0) {
         const bye = document.createElement('button');

@@ -1,11 +1,14 @@
 // import services and utilities
 import { getRandomItem, getRandomIndex } from './utils.js';
+
 // import component creators
-import state, { addEnemy, setMessage } from './components/state.js';
+import state, { addEnemy, setMessage, removeEnemy } from './components/state.js';
 import createAddEnemy from './components/AddEnemy.js';
 import createEnemy from './components/enemies.js';
+import createMessage from './components/Message.js';
 
 // import state and dispatch functions
+const Message = createMessage(document.querySelector('#message'));
 
 
 // Create each component: 
@@ -22,7 +25,7 @@ const AddEnemy = createAddEnemy(document.querySelector('#add-enemy'), {
     handleAddEnemy: (name) => {
         const enemy = {
             name: name,
-            //health:
+            health: Math.ceil(Math.random() * 5),
         };
         addEnemy(enemy);
         display();
