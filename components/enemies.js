@@ -43,7 +43,7 @@ export function Enemy({ enemy, handleAttackEnemy, handleBye }) {
         const bye = document.createElement('button');
         bye.classList.add('bye');
         bye.textContent = '🗑️';
-        emojiEl.textContent = emojis[1];
+        //emojiEl.textContent = emojis[1];
         bye.addEventListener('click', (e) => {
             e.stopPropagation();
             handleBye(enemy);

@@ -1,0 +1,49 @@
+main {
+    display: grid;
+    grid-template-columns: 350px, 1fr;
+    grid-template-areas: 
+    'player-info enemy-info';
+}
+
+.player-info {
+    grid-area: 'player-info';
+    padding: 15px;
+    justify-self: center;
+}
+
+.enemy-info {
+    grid-area: 'enemy-info';
+}
+
+
+#enemy-message {
+    background: black;
+    justify-self: center;
+    align-self: center;
+    padding: 3px;
+}
+
+#player-message {
+    background: black;
+    justify-self: flex-start;
+    align-self: center;
+    padding: 3px;
+}
+
+button:hover {
+    background-color: black;
+}
+
+.player-hp-container {
+    background: black;
+
+}
+
+.enemies-defeated {
+    background: black;
+    padding: 1px;
+}
+
+#add-enemy {
+    padding-bottom: 10px;
+}
