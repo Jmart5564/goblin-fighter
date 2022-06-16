@@ -1,5 +1,5 @@
 // import services and utilities
-
+import { getRandomItem, getRandomIndex } from './utils.js';
 // import component creators
 import state, { addEnemy, setMessage } from './components/state.js';
 import createAddEnemy from './components/AddEnemy.js';
@@ -21,8 +21,8 @@ const Enemies = createEnemy(document.querySelector('#enemies'), {
 const AddEnemy = createAddEnemy(document.querySelector('#add-enemy'), {
     handleAddEnemy: (name) => {
         const enemy = {
-            name: name
-            //how to add aspect that randomly generates hp?
+            name: name,
+            //health:
         };
         addEnemy(enemy);
         display();
