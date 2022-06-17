@@ -1,7 +1,7 @@
 import state, {
     initialize,
     // import dispatch functions
-} from '../state.js';
+} from '../components/state.js';
 
 // make sure state is at known starting point
 QUnit.module('state', { beforeEach: initialize });
