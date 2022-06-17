@@ -12,6 +12,7 @@ const playerMessage = createMessage(document.querySelector('#player-message'));
 const enemyMessage = createMessage(document.querySelector('#enemy-message'));
 let playerHP = document.querySelector('#player-hp');
 let defeatedEnemies = document.querySelector('#defeated-number');
+let playerImg = document.querySelector('#player-img');
 
 
 
@@ -26,13 +27,13 @@ const Enemies = createEnemy(document.querySelector('#enemies'), {
         if (state.hp === 0) {
             return;
         }
-        if (Math.random() < 0.33) {
+        if (Math.random() < 0.5) {
             enemy.health--;
             setPlayerMessage('You hit the enemy!');
         } else {
             setPlayerMessage('You missed!');
         }
-        if (Math.random() < 0.5) {
+        if (Math.random() < 0.33) {
             state.hp--;
             setEnemyMessage('Enemy hit you!');
         } else {
@@ -72,8 +73,6 @@ function display() {
     Enemies({ enemies: state.enemies });
     playerHP.textContent = state.hp; 
     defeatedEnemies.textContent = state.defeated;
-    //defeatedEnemies ({ defeated: state.defeated });
-    // Call each component passing in props that are the pieces of state this component needs
 }
 
 // Call display on page load

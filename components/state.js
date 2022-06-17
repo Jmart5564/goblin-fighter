@@ -9,7 +9,7 @@ export function initialize() {
     state.enemyMessage = '';
     state.playerMessage = '';
     state.enemies = [
-        { name: 'OZ', health: 3 },
+        { name: 'Poe', health: 3 },
     ];
 }
 // call initialize

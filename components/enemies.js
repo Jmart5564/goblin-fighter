@@ -11,7 +11,6 @@ export default function createEnemy(root, { handleAttackEnemy, handleBye }) {
     };
 }
 
-const emojis = ['👿', '💀'];
 
 export function Enemy({ enemy, handleAttackEnemy, handleBye }) {
     const button = document.createElement('button');
@@ -43,7 +42,7 @@ export function Enemy({ enemy, handleAttackEnemy, handleBye }) {
         const bye = document.createElement('button');
         bye.classList.add('bye');
         bye.textContent = '🗑️';
-        //emojiEl.textContent = emojis[1];
+        imgEl.src = './skull.png';
         bye.addEventListener('click', (e) => {
             e.stopPropagation();
             handleBye(enemy);
