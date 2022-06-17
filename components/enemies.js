@@ -24,9 +24,6 @@ export function Enemy({ enemy, handleAttackEnemy, handleBye }) {
     nameEl.classList.add('name');
     nameEl.textContent = enemy.name;
 
-    //const emojiEl = document.createElement('span');
-    //emojiEl.classList.add('emoji');
-    //emojiEl.textContent = emojis[0];
     const imgEl = document.createElement('img');
     imgEl.classList.add('img');
     imgEl.src = './poe.png';
