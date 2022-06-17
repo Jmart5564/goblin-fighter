@@ -1,5 +1,4 @@
 // import services and utilities
-import { getRandomItem, getRandomIndex } from './utils.js';
 
 // import component creators
 import state, { addEnemy, setPlayerMessage, setEnemyMessage, removeEnemy } from './components/state.js';
@@ -12,7 +11,6 @@ const playerMessage = createMessage(document.querySelector('#player-message'));
 const enemyMessage = createMessage(document.querySelector('#enemy-message'));
 let playerHP = document.querySelector('#player-hp');
 let defeatedEnemies = document.querySelector('#defeated-number');
-let playerImg = document.querySelector('#player-img');
 
 
 
